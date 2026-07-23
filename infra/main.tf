@@ -4,6 +4,11 @@ terraform {
       source = "hashicorp/aws"
       version = "~> 5.92"
     }
+
+    archive = {
+      source = "hashicorp/archive"
+      version = "~> 2.4"
+    }
   }
 
   required_version = ">= 1.2"
@@ -11,12 +16,4 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-}
-
-resource "aws_s3_bucket" "raw" {
-  bucket = "lumina-raw"
-}
-
-resource "aws_s3_bucket" "processed" {
-  bucket = "lumina-processed"
 }
